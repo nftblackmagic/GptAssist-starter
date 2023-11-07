@@ -3,7 +3,7 @@ export const Footer = () => {
     <footer className="flex items-center justify-center w-full h-24 border-t">
       <a
         className="flex items-center justify-center"
-        href="https://github.com/nftblackmagic"
+        href="https://github.com/nftblackmagic/GptAssit-starter.git"
         target="_blank"
         rel="noopener noreferrer"
       >
