@@ -1,8 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Welcome to OpenAI Starter!
+
+This repository is designed as a starter kit for anyone looking to get up to speed with the latest features offered by OpenAI. Whether you're a developer, researcher, or just an AI enthusiast, this space is curated to help you understand and experiment with OpenAI's cutting-edge advancements.
+
+## What's Inside?
+
+Within this repository, you'll find a collection of resources, code snippets, and tutorials that demystify OpenAI's newest features. We aim to provide a hands-on approach to learning, enabling you to:
+
+### Roadmap
+
+- [x] ask and answer chat with gpt4-turbo/gpt4-V
+- [ ] chatbot with gpt4-turbo/gpt4-V
+- [x] assistants api
+- [ ] TTS
+- [ ] dall-e 3
 
 ## Getting Started
 
-## create .env.local file and add your openai api key
+To begin, simply clone this repository, and follow the installation instructions. You'll be running your first experiments in no time!
+
+### create .env.local file and add your openai api key
 
 First, run the development server:
 
@@ -20,8 +36,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
@@ -32,11 +46,10 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [OPENAI api](https://platform.openai.com/docs/api-reference/introduction) - openai tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+We welcome contributions from the community! If you have suggestions, bug reports, or contributions, please open an issue or pull request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Join us in demystifying the power of AI and making it accessible to all. Happy exploring!
