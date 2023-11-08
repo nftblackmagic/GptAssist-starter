@@ -1,6 +1,6 @@
 ## Welcome to OpenAI Starter!
 
-This repository is designed as a starter kit for anyone looking to get up to speed with the latest features offered by OpenAI. Whether you're a developer, researcher, or just an AI enthusiast, this space is curated to help you understand and experiment with OpenAI's cutting-edge advancements.
+This repository is designed as a NEXTJS starter kit for anyone looking to get up to speed with the latest features offered by OpenAI. Whether you're a developer, researcher, or just an AI enthusiast, this space is curated to help you understand and experiment with OpenAI's cutting-edge advancements.
 
 ## What's Inside?
 
