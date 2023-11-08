@@ -1,25 +1,25 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { IData } from "@/type/gptType";
-import { IMessage } from "@/type/messageType";
+import { IThread } from "@/type/threadType";
 import type { NextApiRequest, NextApiResponse } from "next";
 import OpenAI from "openai";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<IMessage | IData>
+  res: NextApiResponse<IThread | IData>
 ) {
-  const { method, thread_id, msg_id, messages } = req.body;
+  const { method, thread_id } = req.body;
 
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
 
-  if (req.method === "POST" && method === "create" && thread_id && messages) {
-    openai.beta.threads.messages
-      .create(thread_id, messages)
+  if (req.method === "POST" && method === "create") {
+    openai.beta.threads
+      .create({})
       .then((response) => {
         console.log(response);
-        res.status(200).json(response as IMessage);
+        res.status(200).json(response as IThread);
       })
       .catch((error) => {
         console.log(error);
@@ -27,12 +27,12 @@ export default function handler(
       });
   }
 
-  if (req.method === "POST" && method === "retrieve" && thread_id && msg_id) {
-    openai.beta.threads.messages
-      .retrieve(thread_id, msg_id)
+  if (req.method === "POST" && method === "retrieve" && thread_id) {
+    openai.beta.threads
+      .retrieve(thread_id)
       .then((response) => {
         console.log(response);
-        res.status(200).json(response as IMessage);
+        res.status(200).json(response as IThread);
       })
       .catch((error) => {
         console.log(error);
@@ -40,12 +40,12 @@ export default function handler(
       });
   }
 
-  if (req.method === "POST" && method === "list" && thread_id) {
-    openai.beta.threads.messages
-      .list(thread_id)
+  if (req.method === "POST" && method === "delete" && thread_id) {
+    openai.beta.threads
+      .del(thread_id)
       .then((response) => {
         console.log(response);
-        res.status(200).json(response.data as any);
+        res.status(200).json(response as any);
       })
       .catch((error) => {
         console.log(error);
