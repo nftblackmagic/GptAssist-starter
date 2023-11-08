@@ -10,7 +10,7 @@ export const Searcher = () => {
   );
   const { retrieveMessage } = useMessage();
 
-  const [text, setText] = useState("What's langchain?");
+  const [text, setText] = useState("What's I2VGen-XL?");
   const [threadId, setThreadId] = useState("");
   const [runId, setRunId] = useState("");
   const [status, setStatus] = useState("");
