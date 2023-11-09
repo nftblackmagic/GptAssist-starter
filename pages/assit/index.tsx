@@ -20,9 +20,11 @@ export default function Assit() {
     "asst_FTkAAEzhQHpkDWBq30s1IPq9"
   );
 
-  const { audio, createAudio } = useAudio();
+  const { audio, createAudio, transcriptAudio } = useAudio();
 
   const [audioUrl, setAudioUrl] = useState("");
+
+  const [inputAudio, setInputAudio] = useState("");
 
   const handleAudio = async () => {
     createAudio(
@@ -112,6 +114,18 @@ export default function Assit() {
             <code>audio</code> element.
           </audio>
         )}
+
+        <input
+          type="text"
+          value={inputAudio}
+          onChange={(e) => setInputAudio(e.target.value)}
+        />
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={() => transcriptAudio(inputAudio)}
+        >
+          transript test
+        </button>
 
         {completions && <p>{completions}</p>}
       </main>
