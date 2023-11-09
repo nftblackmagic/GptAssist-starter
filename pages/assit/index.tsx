@@ -1,7 +1,9 @@
 import { Footer } from "@/components/Footer";
+import { useAudio } from "@/hook/useAudio";
 import { useMessage } from "@/hook/useMessage";
 import { useRun } from "@/hook/useRun";
 import { useThread } from "@/hook/useThread";
+import { useEffect, useState } from "react";
 
 const title = "What’s 巨头卷死小厂?";
 
@@ -17,6 +19,18 @@ export default function Assit() {
   const { retrieveRun, retrieveRunStep, listRunSteps } = useRun(
     "asst_FTkAAEzhQHpkDWBq30s1IPq9"
   );
+
+  const { audio, createAudio } = useAudio();
+
+  const [audioUrl, setAudioUrl] = useState("");
+
+  const handleAudio = async () => {
+    createAudio(
+      "tts-1",
+      "alloy",
+      "Today is a wonderful day to build something people love!"
+    );
+  };
 
   const handleClick = async () => {
     // retrieveMessage(
@@ -44,6 +58,13 @@ export default function Assit() {
       "run_Cu4EjJcv5wyt8mmQB54M5PY5"
     );
   };
+
+  useEffect(() => {
+    if (audio != undefined) {
+      const audioSrc = `data:audio/mp3;base64,${audio}`;
+      setAudioUrl(audioSrc);
+    }
+  }, [audio]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 ">
@@ -77,6 +98,20 @@ export default function Assit() {
         >
           run step test
         </button>
+
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleAudio}
+        >
+          audio test
+        </button>
+
+        {audioUrl && (
+          <audio controls src={audioUrl}>
+            Your browser does not support the
+            <code>audio</code> element.
+          </audio>
+        )}
 
         {completions && <p>{completions}</p>}
       </main>
