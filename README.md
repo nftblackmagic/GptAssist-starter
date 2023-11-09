@@ -8,11 +8,12 @@ Within this repository, you'll find a collection of resources, code snippets, an
 
 ### Roadmap
 
-- [x] ask and answer chat with gpt4-turbo/gpt4-V
+- [x] ask and answer chat with gpt4-turbo/gpt4-V (useGPT)
 - [ ] chatbot with gpt4-turbo/gpt4-V
-- [x] assistants api
-- [ ] TTS
+- [x] assistants api (useMessage, useRun, useThread)
+- [x] TTS and whisper (useAudio)
 - [ ] dall-e 3
+- [ ] streaming output
 
 ## Getting Started
 
